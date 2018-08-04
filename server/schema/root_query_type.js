@@ -6,8 +6,11 @@ const LyricType = require('./lyric_type');
 const Lyric = mongoose.model('lyric');
 const Song = mongoose.model('song');
 
+// RootQuery is the entrypoint to our data
+// All types defined needs to be put
+// As fields in the  RootQuery
 const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType',
+  name: 'RootQueryType', // This property defines the type. Capitlized by convention
   fields: () => ({
     songs: {
       type: new GraphQLList(SongType),
